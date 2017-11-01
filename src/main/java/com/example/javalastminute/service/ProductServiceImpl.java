@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 public class ProductServiceImpl implements ProductService {
 
     private final String INPUT_REGEX = "(\\d+)\\s([\\w\\s]+)\\sat\\s(\\d+(\\.\\d+)?)";
+    private final String IMPORTED_REGEX = "\\s?imported\\s+";
     private final Map<String, ProductType> typeMapper = new HashMap<>();
     private final String BOOK = "book";
     private final String MUSIC_CD = "music CD";
@@ -26,6 +27,7 @@ public class ProductServiceImpl implements ProductService {
     private final String CHOCO_BOX = "box of chocolates";
     private final String PERFUME_BOTTLE = "bottle of perfume";
     private final String PILLS_PACK = "packet of headache pills";
+    private final String IMPORTED = "imported";
 
     public ProductServiceImpl() {
         typeMapper.put(BOOK, ProductType.BOOK);
@@ -53,9 +55,9 @@ public class ProductServiceImpl implements ProductService {
             double price = Double.parseDouble(matcher.group(3));
 
             boolean imported = false;
-            if (item.contains("imported")) {
+            if (item.contains(IMPORTED)) {
                 imported = true;
-                name = name.replaceAll("\\s?imported\\s+", " ").trim();
+                name = name.replaceAll(IMPORTED_REGEX, " ").trim();
             }
 
             product = new Product(name, price, quantity, imported, typeMapper.get(name));
