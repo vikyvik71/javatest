@@ -1,10 +1,12 @@
 package com.example.javalastminute.domain;
 
 import com.example.javalastminute.logic.TaxStrategy;
-import com.example.javalastminute.utils.Utils;
 
 /**
- *
+ * Base domain object. Represents a product.
+ * It is composed of the tax strategy which helps
+ * determine the taxed price for this item.
+ * 
  * @author Vittorio
  */
 public class Product {
@@ -25,12 +27,18 @@ public class Product {
     }
     
     public double getTaxedPrice() {
-        double result = (price + strategy.calculateTax(price))*quantity;
-        return Utils.round(result, 2);
+        double tax = strategy.calculateTax(price);
+        double roundedTax = TaxStrategy.roundTax(tax);
+                
+        return (price + roundedTax)*quantity;
     }
 
     public void setStrategy(TaxStrategy strategy) {
         this.strategy = strategy;
+    }
+
+    public TaxStrategy getStrategy() {
+        return strategy;
     }
     
     public String getName() {

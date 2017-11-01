@@ -6,8 +6,8 @@ import org.junit.runners.Suite;
 
 /**
  * Utility test class that includes all test classes.
- * Remove ignore (added to avoid duplicated tests during
- * build) annotation to run it.
+ * Remove ignore annotation (added to avoid duplicated 
+ * tests during build) to run it.
  * 
  * @author Vittorio
  */
@@ -16,6 +16,6 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
   FactoryTest.class,
   StrategyTest.class,
-  MainTest.class  
+  ServiceTest.class  
 })
 public class TestAll {}

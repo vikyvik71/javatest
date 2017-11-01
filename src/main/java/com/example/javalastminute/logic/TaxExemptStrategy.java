@@ -6,7 +6,7 @@ package com.example.javalastminute.logic;
  * 
  * @author Vittorio
  */
-public class TaxExemptStrategy implements TaxStrategy {
+public class TaxExemptStrategy extends TaxStrategy {
     
     @Override
     public double calculateTax(double price) {
