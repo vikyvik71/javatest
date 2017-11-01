@@ -11,7 +11,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Class for testing service layer, in particular the 2
+ * main mapping functions String <-> Product.
+ * 
  * @author Vittorio
  */
 public class ServiceTest {
@@ -26,7 +28,7 @@ public class ServiceTest {
     @Test
     public void testSingleItem() {        
         Product p = service.processItem("3 imported box of chocolates at 10.00");
-        assertEquals(p.getTaxedPrice(), 31.5, 0.05);
+        assertEquals(31.5, p.getTaxedPrice(), 0.05);
         assertEquals(p.getName(), "box of chocolates");
         assertEquals(p.getPrice(), 10.00, 0.0);
         assertEquals(p.isImported(), true);
@@ -46,4 +48,16 @@ public class ServiceTest {
         p2.setStrategy(TaxStrategyFactory.getRightStrategy(p2));
         assertEquals(service.outputItem(p2), "1 imported box of chocolates: 11.85");        
     }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testOutputNullItem() {          
+        Product p1 = null;        
+        service.outputItem(p1);        
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testProcessNullItem() {          
+        String item = null;
+        service.processItem(item);
+    }    
 }

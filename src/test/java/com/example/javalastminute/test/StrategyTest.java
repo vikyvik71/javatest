@@ -51,4 +51,11 @@ public class StrategyTest {
         
         assertEquals(roundedTax, 7.15d, 0.05);        
     }
+    
+    @Test
+    public void testRoundTax() {
+        assertEquals(TaxStrategy.roundTax(.06), 0.1d, 0.0);
+        assertEquals(TaxStrategy.roundTax(.04), 0.05d, 0.0);
+        assertEquals(TaxStrategy.roundTax(5.625), 5.65d, 0.0);
+    }  
 }

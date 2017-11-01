@@ -56,4 +56,9 @@ public class FactoryTest {
         TaxStrategy strategy = TaxStrategyFactory.getRightStrategy(PRODUCTS[3]);        
         assertTrue(strategy instanceof TaxBaseImportedStrategy);
     }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testNullItem() {          
+        TaxStrategyFactory.getRightStrategy(null);        
+    }
 }
