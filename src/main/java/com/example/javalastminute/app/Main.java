@@ -37,8 +37,7 @@ public class Main {
         // through result
         Main app = new Main();
         Map<String, List<Product>> result = app.parseInput();
-        app.generateOutput(result);         
-        System.out.println(TaxStrategy.roundTax(.06));
+        app.generateOutput(result);                 
     }
     
     // Method for parsing input structures. Returns map
