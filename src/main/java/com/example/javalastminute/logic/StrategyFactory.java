@@ -14,7 +14,7 @@ import com.example.javalastminute.domain.ProductType;
  */
 public class StrategyFactory {
  
-    public TaxStrategy getRightStrategy(Product product) {
+    public static TaxStrategy getRightStrategy(Product product) {
         
         TaxStrategy result = null;
         ProductType type = product.getType();        

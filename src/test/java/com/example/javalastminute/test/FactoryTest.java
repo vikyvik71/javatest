@@ -21,26 +21,6 @@ import static org.junit.Assert.*;
  */
 public class FactoryTest {
     
-    private Map<String, ProductType> typeMapper = new HashMap<String, ProductType>();
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-        typeMapper.put("bottle of perfume", ProductType.OTHER);
-        typeMapper.put("box of chocolates", ProductType.FOOD);
-        typeMapper.put("packet of headache pills", ProductType.MEDICAL);
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

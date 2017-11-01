@@ -9,11 +9,10 @@ package com.example.javalastminute.logic;
  *
  * @author Vittorio
  */
-public class TaxExemptStrategy extends TaxStrategy {
+public class TaxExemptStrategy implements TaxStrategy {
     
     @Override
-    public Double calculateTax(Double price) {
+    public double calculateTax(double price) {
         return 0.0;
-    }
-    
+    }   
 }

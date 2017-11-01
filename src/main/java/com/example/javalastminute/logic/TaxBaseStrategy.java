@@ -5,15 +5,17 @@
  */
 package com.example.javalastminute.logic;
 
+import com.example.javalastminute.utils.Utils;
+
 /**
  *
  * @author Vittorio
  */
-public class TaxBaseStrategy extends TaxStrategy {
+public class TaxBaseStrategy implements TaxStrategy {
 
     @Override
-    public Double calculateTax(Double price) {
-        return roundTax((price * 10.0)/100.0);
+    public double calculateTax(double price) {
+        return Utils.roundTax((price * 10.0)/100.0);
     }
     
 }
