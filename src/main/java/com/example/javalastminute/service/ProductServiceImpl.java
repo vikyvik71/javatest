@@ -20,14 +20,20 @@ public class ProductServiceImpl implements ProductService {
 
     private final String INPUT_REGEX = "(\\d+)\\s([\\w\\s]+)\\sat\\s(\\d+(\\.\\d+)?)";
     private final Map<String, ProductType> typeMapper = new HashMap<>();
+    private final String BOOK = "book";
+    private final String MUSIC_CD = "music CD";
+    private final String CHOCO_BAR = "chocolate bar";
+    private final String CHOCO_BOX = "box of chocolates";
+    private final String PERFUME_BOTTLE = "bottle of perfume";
+    private final String PILLS_PACK = "packet of headache pills";
 
     public ProductServiceImpl() {
-        typeMapper.put("book", ProductType.BOOK);
-        typeMapper.put("music CD", ProductType.OTHER);
-        typeMapper.put("chocolate bar", ProductType.FOOD);
-        typeMapper.put("box of chocolates", ProductType.FOOD);
-        typeMapper.put("bottle of perfume", ProductType.OTHER);
-        typeMapper.put("packet of headache pills", ProductType.MEDICAL);
+        typeMapper.put(BOOK, ProductType.BOOK);
+        typeMapper.put(MUSIC_CD, ProductType.OTHER);
+        typeMapper.put(CHOCO_BAR, ProductType.FOOD);
+        typeMapper.put(CHOCO_BOX, ProductType.FOOD);
+        typeMapper.put(PERFUME_BOTTLE, ProductType.OTHER);
+        typeMapper.put(PILLS_PACK, ProductType.MEDICAL);
     }
 
     @Override
