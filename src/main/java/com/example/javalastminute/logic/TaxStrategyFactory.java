@@ -13,6 +13,8 @@ public class TaxStrategyFactory {
  
     public static TaxStrategy getRightStrategy(Product product) {
         
+        if(product == null) throw new IllegalArgumentException();
+        
         TaxStrategy result = null;
         ProductType type = product.getType();        
         

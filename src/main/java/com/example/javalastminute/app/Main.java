@@ -1,6 +1,7 @@
 package com.example.javalastminute.app;
 
 import com.example.javalastminute.domain.Product;
+import com.example.javalastminute.logic.TaxStrategy;
 import com.example.javalastminute.service.ProductService;
 import com.example.javalastminute.service.ProductServiceImpl;
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class Main {
         Main app = new Main();
         Map<String, List<Product>> result = app.parseInput();
         app.generateOutput(result);         
+        System.out.println(TaxStrategy.roundTax(.06));
     }
     
     // Method for parsing input structures. Returns map

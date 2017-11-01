@@ -10,7 +10,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
+ * Main service implementation, gives clients a 2-direction
+ * mapping from an input line to a product and from a product
+ * to an output line with updated values and required formatting.
+ * 
  * @author Vittorio
  */
 public class ProductServiceImpl implements ProductService {
@@ -30,6 +33,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product processItem(String item) {
 
+        if(item == null) throw new IllegalArgumentException();
+                
         Pattern pattern = Pattern.compile(INPUT_REGEX);
         Matcher matcher = pattern.matcher(item);
 
@@ -56,6 +61,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public String outputItem(Product product) {
+        
+        if(product == null) throw new IllegalArgumentException();
+        
         double taxedPrice = product.getTaxedPrice();
 
         String name = product.getName();
@@ -70,5 +78,4 @@ public class ProductServiceImpl implements ProductService {
         
         return result.trim();
     }
-
 }
