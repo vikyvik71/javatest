@@ -4,7 +4,9 @@ import com.example.javalastminute.domain.Product;
 import com.example.javalastminute.domain.ProductType;
 
 /**
- *
+ * Factory class for tax strategies. Strategy selection
+ * is based on product type and imported status.
+ * 
  * @author Vittorio
  */
 public class TaxStrategyFactory {

@@ -4,11 +4,13 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- *
+ * Utility class for tax and double rounding.
+ * 
  * @author Vittorio
  */
 public class Utils {
     
+    // Function to round up to n decimal places
     public static double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
 
@@ -18,6 +20,9 @@ public class Utils {
     }
     
     public static double roundTax(double tax) {
+        // Get the reminder, calculate delta
+        // to the upper .05 and add it to tax
+        // value
         double reminder = tax % .05;
         if(reminder != 0.0) {
             double addendum = .05 - reminder;

@@ -15,6 +15,7 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
   FactoryTest.class,
-  StrategyTest.class  
+  StrategyTest.class,
+  MainTest.class  
 })
 public class TestAll {}
