@@ -6,7 +6,9 @@
 package com.example.javalastminute.logic;
 
 /**
- *
+ * Tax Exempt strategy, for products in the FOOD,
+ * BOOK or MEDICAL category.
+ * 
  * @author Vittorio
  */
 public class TaxExemptStrategy implements TaxStrategy {

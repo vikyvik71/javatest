@@ -7,7 +7,7 @@ package com.example.javalastminute.app;
 
 import com.example.javalastminute.domain.Product;
 import com.example.javalastminute.domain.ProductType;
-import com.example.javalastminute.logic.StrategyFactory;
+import com.example.javalastminute.logic.TaxStrategyFactory;
 import com.example.javalastminute.utils.Utils;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -93,7 +93,7 @@ public class Main {
                     }   
                     
                     Product product = new Product(name, price, quantity, imported, typeMapper.get(name));
-                    product.setStrategy(StrategyFactory.getRightStrategy(product));
+                    product.setStrategy(TaxStrategyFactory.getRightStrategy(product));
                     
                     products.add(product);            
                 }

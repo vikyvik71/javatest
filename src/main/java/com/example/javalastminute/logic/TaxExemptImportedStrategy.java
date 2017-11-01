@@ -8,7 +8,9 @@ package com.example.javalastminute.logic;
 import com.example.javalastminute.utils.Utils;
 
 /**
- *
+ * Tax Exempt Imported strategy, for imported products
+ * in the FOOD, BOOK or MEDICAL category.
+ * 
  * @author Vittorio
  */
 public class TaxExemptImportedStrategy implements TaxStrategy {

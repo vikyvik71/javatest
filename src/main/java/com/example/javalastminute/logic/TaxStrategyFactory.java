@@ -12,7 +12,7 @@ import com.example.javalastminute.domain.ProductType;
  *
  * @author Vittorio
  */
-public class StrategyFactory {
+public class TaxStrategyFactory {
  
     public static TaxStrategy getRightStrategy(Product product) {
         
