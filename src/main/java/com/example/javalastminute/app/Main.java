@@ -1,7 +1,6 @@
 package com.example.javalastminute.app;
 
 import com.example.javalastminute.domain.Product;
-import com.example.javalastminute.logic.TaxStrategy;
 import com.example.javalastminute.service.ProductService;
 import com.example.javalastminute.service.ProductServiceImpl;
 import java.util.ArrayList;

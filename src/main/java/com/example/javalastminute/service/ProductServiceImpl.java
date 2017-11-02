@@ -20,6 +20,7 @@ public class ProductServiceImpl implements ProductService {
 
     private final String INPUT_REGEX = "(\\d+)\\s([\\w\\s]+)\\sat\\s(\\d+(\\.\\d+)?)";
     private final String IMPORTED_REGEX = "\\s?imported\\s+";
+    private final String RESULT_STRING = "%d%s %s: %s%n";
     private final Map<String, ProductType> typeMapper = new HashMap<>();
     private final String BOOK = "book";
     private final String MUSIC_CD = "music CD";
@@ -82,7 +83,7 @@ public class ProductServiceImpl implements ProductService {
         // Format to use dot as separator for decimals
         String taxedPriceStr = String.format(Locale.ROOT, "%.2f", taxedPrice);
 
-        String result = String.format("%d%s %s: %s%n", quantity, imported, name, taxedPriceStr);
+        String result = String.format(RESULT_STRING, quantity, imported, name, taxedPriceStr);
         
         return result.trim();
     }
