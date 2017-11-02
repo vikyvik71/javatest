@@ -1,1 +1,1 @@
-Java test interview. Run Main class.
+Java test. Run Main class to see output.
